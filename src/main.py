@@ -94,7 +94,7 @@ def move_coordinate(up, down, left, right, map_data):
                 if map_data[y][x] == 2:
 
                     # collision processing
-                    if map_data[y-1][x] == 0:
+                    if map_data[y-1][x] == 0 or map_data[y-1][x] == 4:
 
                         map_data[y-1][x] = 2
                         map_data[y][x]   = 4
@@ -105,16 +105,16 @@ def move_coordinate(up, down, left, right, map_data):
                 if map_data[y][x] == 2:
 
                     # collision processing
-                    if map_data[y+1][x] == 0:
+                    if map_data[y+1][x] == 0 or map_data[y+1][x] == 4:
 
                         map_data[y+1][x] = 2
                         map_data[y][x]   = 4
                         break
                 
-                else:
-                    continue
+            else:
+                continue
 
-                break
+            break
 
     elif left:
         for y in range(len(map_data)):
@@ -122,7 +122,7 @@ def move_coordinate(up, down, left, right, map_data):
                 if map_data[y][x] == 2:
 
                     # collision processing
-                    if map_data[y][x-1] == 0:
+                    if map_data[y][x-1] == 0 or map_data[y][x-1] == 4:
 
                         map_data[y][x-1] = 2
                         map_data[y][x]   = 4
@@ -133,16 +133,16 @@ def move_coordinate(up, down, left, right, map_data):
                 if map_data[y][x] == 2:
 
                     # collision processing
-                    if map_data[y][x+1] == 0:
+                    if map_data[y][x+1] == 0 or map_data[y][x+1] == 4:
 
                         map_data[y][x+1] = 2
                         map_data[y][x]   = 4
                         break
                 
-                else:
-                    continue
+            else:
+                continue
 
-                break
+            break
 
     #Enemy Movement
     can_move = []
@@ -152,7 +152,7 @@ def move_coordinate(up, down, left, right, map_data):
         for x in range(len(map_data[y])):
             if map_data[y][x] == 3:
                 
-                if map_data[y-1][x] == 0:
+                if map_data[y-1][x] == 0 or map_data[y-1][x] == 4:
                     can_move.append(0)
 
     # collision down processing
@@ -160,7 +160,7 @@ def move_coordinate(up, down, left, right, map_data):
         for x in range(len(map_data[y])):
             if map_data[y][x] == 3:
                 
-                if map_data[y+1][x] == 0:
+                if map_data[y+1][x] == 0 or map_data[y+1][x] == 4:
                     can_move.append(1)
 
     # collision left processing
@@ -168,7 +168,7 @@ def move_coordinate(up, down, left, right, map_data):
         for x in range(len(map_data[y])):
             if map_data[y][x] == 3:
 
-                if map_data[y][x-1] == 0:
+                if map_data[y][x-1] == 0 or map_data[y][x-1] == 4:
                     can_move.append(2)
 
     # collision right processing
@@ -176,7 +176,7 @@ def move_coordinate(up, down, left, right, map_data):
         for x in range(len(map_data[y])):
             if map_data[y][x] == 3:
                 
-                if map_data[y][x+1] == 0:
+                if map_data[y][x+1] == 0 or map_data[y][x+1] == 4:
                     can_move.append(3)
 
     random.shuffle(can_move)
@@ -187,6 +187,7 @@ def move_coordinate(up, down, left, right, map_data):
         for y in range(len(map_data)):
             for x in range(len(map_data[y])):
                 if map_data[y][x] == 3:
+
                     map_data[y-1][x] = 3
                     map_data[y][x]   = 0
 
@@ -194,6 +195,7 @@ def move_coordinate(up, down, left, right, map_data):
         for y in range(len(map_data)):
             for x in range(len(map_data[y])):
                 if map_data[y][x] == 3:
+
                     map_data[y+1][x] = 3    
                     map_data[y][x]   = 0
                     break
@@ -207,6 +209,7 @@ def move_coordinate(up, down, left, right, map_data):
         for y in range(len(map_data)):
             for x in range(len(map_data[y])):
                 if map_data[y][x] == 3:
+
                     map_data[y][x-1] = 3
                     map_data[y][x]   = 0
 
@@ -214,6 +217,7 @@ def move_coordinate(up, down, left, right, map_data):
         for y in range(len(map_data)):
             for x in range(len(map_data[y])):
                 if map_data[y][x] == 3:
+
                     map_data[y][x+1] = 3
                     map_data[y][x]   = 0
                     break
@@ -273,7 +277,7 @@ def main():
         draw_game_window(map_data, screen, BLUE, RED, YELLOW, ORANGE, BLACK, block_size)
     
         #FPS
-        clock.tick(1)
+        clock.tick(3)
 
 if __name__ == '__main__':
     try:

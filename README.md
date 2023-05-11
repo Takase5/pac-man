@@ -33,5 +33,5 @@ down:　↓
 left: ←
 right: →
 
-##execute
+## execute
 'python3 src/main.py'

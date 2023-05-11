@@ -11,7 +11,7 @@ If the cord is long enough, we will produce a module.
 
 ### Program Flow
 1. Execute
-2. Menue
+2. Menu
 3. Start game
 4. Close
 

@@ -10,7 +10,6 @@ python3.11.1
 !Unfinished!
 ## directory
 Basically program it in main.py
-コードが十分な長さであればモジュールを製作いたします。
 
 ## Prigram flow
 1. Execute

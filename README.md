@@ -3,13 +3,16 @@ We will create Pacman using python and pygame
 
 ![Pacman](pacman.jfif)
 
+##execution environment
+python3.11.1
+
 ## design
 !Unfinished!
 ### directory
 Basically program it in main.py
-If the cord is long enough, we will produce a module.
+コードが十分な長さであればモジュールを製作いたします。
 
-### Program Flow
+### プログラムの流れ
 1. Execute
 2. Menu
 3. Start game
@@ -29,3 +32,6 @@ up:　↑
 down:　↓
 left: ←
 right: →
+
+###execute
+'python3 src/main.py'

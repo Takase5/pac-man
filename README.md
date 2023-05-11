@@ -6,19 +6,19 @@ We will create Pacman using python and pygame
 ##execution environment
 python3.11.1
 
-## design
+## Design
 !Unfinished!
-### directory
+## directory
 Basically program it in main.py
 コードが十分な長さであればモジュールを製作いたします。
 
-### プログラムの流れ
+## Prigram flow
 1. Execute
 2. Menu
 3. Start game
 4. Close
 
-### implemenation Details
+## Implemenation Details
 1. gamewindow
 2. game loop
 3. process events
@@ -27,11 +27,11 @@ Basically program it in main.py
 6. score
 7. game over
 
-### controll keys
+## Controll keys
 up:　↑
 down:　↓
 left: ←
 right: →
 
-###execute
+##execute
 'python3 src/main.py'
